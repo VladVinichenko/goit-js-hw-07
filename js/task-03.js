@@ -20,11 +20,10 @@ const images = [
 const gallery = document.querySelector("#gallery");
 
 const galleryCollection = images.map((elem) => {
-  const image = document.createElement("img");
-  image.setAttribute("src", `${elem.url}`);
-  image.setAttribute("alt", `${elem.alt}`);
-
-  return image;
+  gallery.insertAdjacentHTML(
+    "beforeend",
+    `
+  <img src=${elem.url}
+  alt=${elem.alt}/>`
+  );
 });
-
-gallery.append(...galleryCollection);
